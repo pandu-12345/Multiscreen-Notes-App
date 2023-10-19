@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/notefrag">
+
+    <fragment
+        android:id="@+id/notefrag"
+        android:name="com.example.frag3.ui.layout.Notefrag"
+        android:label="Notefrag" >
+        <action
+            android:id="@+id/action_notefrag_to_addedit_frag"
+            app:destination="@id/addedit_frag" />
+    </fragment>
+    <fragment
+        android:id="@+id/addedit_frag"
+        android:name="com.example.frag3.ui.layout.addedit_frag"
+        android:label="fragment_add_edit_frag"
+        tools:layout="@layout/fragment_add_edit_frag" >
+
+        <argument
+            android:name="my_data"
+            app:argType="com.example.fragment_app.Data.Entity.Notes"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_addedit_frag_to_notefrag"
+            app:destination="@id/notefrag" />
+    </fragment>
+</navigation>
